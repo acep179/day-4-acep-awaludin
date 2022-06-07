@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root{
+    --primary-color: #111727;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+main{
+    width: 500px;
+    border-radius: 10px;
+    margin: 100px auto;
+    padding: 70px 300px;
+    box-shadow: 0 10px 50px grey;
+}
+
+/*. Article */
+
+article p{
+    text-align: justify;
+}
+
+.contact-button{
+    width: fit-content;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: .5em 1.5em;
+    transition: .5s;
+}
+
+.contact-button:hover{
+    background: white;
+    font-weight: 700;
+    color: var(--primary-color);
+    border: 1px solid black;
+    transition: .3s;
+}
+
+.download{
+    width: fit-content;
+    color: black;
+    text-decoration: none;
+    font-size: large;
+    display: flex;
+    align-items: center;
+}
+
+.download:hover{
+    color: grey;
+}
+
+.download i{
+    font-size: x-large;
+    margin-left: 10px;
+}
+
+/*. Sosmed */
+
+.sosmed{
+    width: fit-content;
+    margin: 35px auto 50px auto;
+}
+
+.sosmed a{
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.sosmed img{
+    width: 40px;
+}
+
+/*. Hero */
+.hero{
+    width: 70%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.hero img{
+    width: 100%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+
+@media screen and (max-width:900px) {
+    main{
+        width: 80%;
+        padding: 10px 50px;
+    }
+}
