@@ -121,6 +121,10 @@ form{
     position: relative;
 }
 
+main h1{
+    text-align: center;
+}
+
 form p{
     margin-bottom: 0;
     font-weight: 500;
