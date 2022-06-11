@@ -13,52 +13,54 @@
     <header>
         <nav>
             <div class="nav-left">
-                <a href="#Home">
+                <a href="./../">
                     <img src="./../assets/img/logo.png" alt="Logo Dumbways">
                 </a>
                 <a href="./../">Home</a>
-                <a href="#">My Project</a>
+                <a href="./../project/">My Project</a>
             </div>
             <div class="nav-right">
-                <a href="#Home">Contact Me</a>
+                <a href="./">Contact Me</a>
             </div>
         </nav>
     </header>
     <main>
         <h1>GET IN TOUCH</h1>
-        <form action="">
-            <label for="name">
+        <form>
+            <label for="input-name">
                 <p>Name</p>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="input-name">
             </label>
 
-            <label for="email">
+            <label for="input-email">
                 <p>Email</p>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="input-email">
             </label>
 
-            <label for="phone">
+            <label for="input-phone">
                 <p>Phone Number</p>
-                <input type="number" name="phone" id="phone">
+                <input type="number" name="phone" id="input-phone">
             </label>
 
-            <label for="subject">
+            <label for="select-subject">
                 <p>Subject</p>
-                <select name="subject" id="subject">
+                <select name="subject" id="select-subject">
+                    <option value="">-- Silakan Dipilih --</option>
                     <option value="Frontend Web Developer">Frontend Web Developer</option>
                     <option value="Backend Web Developer">Backend Web Developer</option>
                     <option value="Fullstack Web Developer">Fullstack Web Developer</option>
                 </select>
             </label>
 
-            <label for="message">
+            <label for="textarea-message">
                 <p>Your Message</p>
-                <textarea name="message" id="message"></textarea>
+                <textarea name="message" id="textarea-message"></textarea>
             </label>
 
-            <button type="submit">Submit</button>
+            <button type="button" onclick="getContactForm()">Submit</button>
         </form>
     </main>
+    <script src="./../assets/js/main.js"></script>
 </body>
 
 </html>
