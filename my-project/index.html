@@ -14,78 +14,77 @@
     <header>
         <nav>
             <div class="nav-left">
-                <a href="#Home">
+                <a href="./../">
                     <img src="./../assets/img/logo.png" alt="Logo Dumbways">
                 </a>
                 <a href="./../">Home</a>
-                <a href="#">My Project</a>
+                <a href="./">My Project</a>
             </div>
             <div class="nav-right">
-                <a href="#Home">Contact Me</a>
+                <a href="./../contact/">Contact Me</a>
             </div>
         </nav>
     </header>
     <main>
-        <form action="">
+        <form>
             <h1>ADD MY PROJECT</h1>
-
-            <label for="project-name">
+            <label for="projectName">
                 <p>Project Name</p>
-                <input type="text" name="name" id="project-name">
+                <input type="text" name="projectName" id="projectName">
             </label>
 
             <div class="date">
-                <label for="start-date">
+                <label for="projectStartDate">
                     <p>Start Date</p>
-                    <input type="date" name="start-date" id="start-date">
+                    <input type="date" name="projectStartDate" id="projectStartDate">
                 </label>
 
-                <label for="end-date">
+                <label for="projectEndDate">
                     <p>End Date</p>
-                    <input type="date" name="end-date" id="end-date">
+                    <input type="date" name="projectEndDate" id="projectEndDate">
                 </label>
             </div>
 
-            <label for="project-description">
+            <label for="projectDescription">
                 <p>Description</p>
-                <textarea name="project-description" id="project-description"></textarea>
+                <textarea name="projectDescription" id="projectDescription"></textarea>
             </label>
 
             <div class="checkbox">
                 <p>Technologies</p>
 
-                <label for="project-html">
-                    <input type="checkbox" name="project-html" id="project-html" value="HTML">
+                <label for="projectHTML">
+                    <input type="checkbox" name="projectHTML" id="projectHTML" value="<i class='bx bxl-html5'></i>">
                     HTML
                 </label>
 
-                <label for="project-css">
-                    <input type="checkbox" name="project-css" id="project-css" value="CSS">
+                <label for="projectCSS">
+                    <input type="checkbox" name="projectCSS" id="projectCSS" value="<i class='bx bxl-css3'></i>">
                     CSS
                 </label>
 
-                <label for="project-js">
-                    <input type="checkbox" name="project-js" id="project-js" value="JavaScript">
+                <label for="projectJS">
+                    <input type="checkbox" name="projectJS" id="projectJS" value="<i class='bx bxl-javascript'></i>">
                     JavaScript
                 </label>
 
-                <label for="project-tailwind">
-                    <input type="checkbox" name="project-tailwind" id="project-tailwind" value="TailwindCSS">
+                <label for="projectTailwind">
+                    <input type="checkbox" name="projectTailwind" id="projectTailwind"
+                        value="<i class='bx bxl-tailwind-css'></i>">
                     TailwindCSS
                 </label>
 
-                <label for="project-sass">
-                    <input type="checkbox" name="project-sass" id="project-sass" value="SASS">
+                <label for="projectSASS">
+                    <input type="checkbox" name="projectSASS" id="projectSASS" value="<i class='bx bxl-sass' ></i>">
                     SASS
                 </label>
             </div>
 
-            <label for="image">
+            <label for="projectImage">
                 <p>Upload Image</p>
-                <input type="file" accept="image/*">
+                <input id="projectImage" type="file" accept="image/*">
             </label>
-
-            <button type="submit">Submit</button>
+            <button type="button" onclick="getProjectForm()">Submit</button>
         </form>
 
         <!--. My Project -->
@@ -98,7 +97,7 @@
                     <h3>Gudangku -2022</h3>
                 </a>
                 <p class="project-time">durasi: 3 bulan</p>
-                <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web</p>
+                <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web.</p>
                 <div class="project-technologies">
                     <i class='bx bxl-html5'></i>
                     <i class='bx bxl-css3'></i>
@@ -109,42 +108,9 @@
                     <p>delete</p>
                 </div>
             </div>
-            <div class="project-item">
-                <div class="project-img">
-
-                </div>
-                <a href="./">
-                    <h3>Indonesian Millennial Development -2022</h3>
-                </a>
-                <p>durasi: 3 bulan</p>
-                <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web</p>
-                <div class="project-technologies">
-                    <i></i>
-                </div>
-                <div class="project-button">
-                    <p>edit</p>
-                    <p>delete</p>
-                </div>
-            </div>
-            <div class="project-item">
-                <div class="project-img">
-
-                </div>
-                <a href="./">
-                    <h3>Indonesian Millennial Development -2022</h3>
-                </a>
-                <p>durasi: 3 bulan</p>
-                <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web</p>
-                <div class="project-technologies">
-                    <i></i>
-                </div>
-                <div class="project-button">
-                    <p>edit</p>
-                    <p>delete</p>
-                </div>
-            </div>
         </div>
     </main>
+    <script src="./../assets/js/main.js"></script>
 </body>
 
 </html>

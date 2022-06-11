@@ -17,7 +17,7 @@
                     <img src="./../assets/img/logo.png" alt="Logo Dumbways">
                 </a>
                 <a href="./../">Home</a>
-                <a href="./../project/">My Project</a>
+                <a href="./../my-project/">My Project</a>
             </div>
             <div class="nav-right">
                 <a href="./">Contact Me</a>
@@ -26,25 +26,26 @@
     </header>
     <main>
         <h1>GET IN TOUCH</h1>
-        <form>
-            <label for="input-name">
+        <form id="contactForm">
+
+            <label for="contactName">
                 <p>Name</p>
-                <input type="text" name="name" id="input-name">
+                <input type="text" name="contactName" id="contactName">
             </label>
 
-            <label for="input-email">
+            <label for="contactEmail">
                 <p>Email</p>
-                <input type="email" name="email" id="input-email">
+                <input type="email" name="contactEmail" id="contactEmail">
             </label>
 
-            <label for="input-phone">
+            <label for="contactPhone">
                 <p>Phone Number</p>
-                <input type="number" name="phone" id="input-phone">
+                <input type="number" name="contactPhone" id="contactPhone">
             </label>
 
-            <label for="select-subject">
+            <label for="contactSubject">
                 <p>Subject</p>
-                <select name="subject" id="select-subject">
+                <select name="contactSubject" id="contactSubject">
                     <option value="">-- Silakan Dipilih --</option>
                     <option value="Frontend Web Developer">Frontend Web Developer</option>
                     <option value="Backend Web Developer">Backend Web Developer</option>
@@ -52,9 +53,9 @@
                 </select>
             </label>
 
-            <label for="textarea-message">
+            <label for="contactMessage">
                 <p>Your Message</p>
-                <textarea name="message" id="textarea-message"></textarea>
+                <textarea name="contactMessage" id="contactMessage"></textarea>
             </label>
 
             <button type="button" onclick="getContactForm()">Submit</button>
