@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./../assets/css/my-project.css">
+    <title>Acep Awaludin - Add Project</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="#Home">
+                    <img src="./../assets/img/logo.png" alt="Logo Dumbways">
+                </a>
+                <a href="./../">Home</a>
+                <a href="#">My Project</a>
+            </div>
+            <div class="nav-right">
+                <a href="#Home">Contact Me</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <form action="">
+            <h1>ADD MY PROJECT</h1>
+
+            <label for="project-name">
+                <p>Project Name</p>
+                <input type="text" name="name" id="project-name">
+            </label>
+
+            <div class="date">
+                <label for="start-date">
+                    <p>Start Date</p>
+                    <input type="date" name="start-date" id="start-date">
+                </label>
+
+                <label for="end-date">
+                    <p>End Date</p>
+                    <input type="date" name="end-date" id="end-date">
+                </label>
+            </div>
+
+            <label for="project-description">
+                <p>Description</p>
+                <textarea name="project-description" id="project-description"></textarea>
+            </label>
+
+            <div class="checkbox">
+                <p>Technologies</p>
+
+                <label for="project-html">
+                    <input type="checkbox" name="project-html" id="project-html" value="HTML">
+                    HTML
+                </label>
+
+                <label for="project-css">
+                    <input type="checkbox" name="project-css" id="project-css" value="CSS">
+                    CSS
+                </label>
+
+                <label for="project-js">
+                    <input type="checkbox" name="project-js" id="project-js" value="JavaScript">
+                    JavaScript
+                </label>
+
+                <label for="project-tailwind">
+                    <input type="checkbox" name="project-tailwind" id="project-tailwind" value="TailwindCSS">
+                    TailwindCSS
+                </label>
+
+                <label for="project-sass">
+                    <input type="checkbox" name="project-sass" id="project-sass" value="SASS">
+                    SASS
+                </label>
+            </div>
+
+            <label for="image">
+                <p>Upload Image</p>
+                <input type="file" accept="image/*">
+            </label>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!--. My Project -->
+        <div id="myProject" class="project">
+            <h1>MY PROJECT</h1>
+            <div class="project-item">
+                <div class="project-img" style="background-image: URL('./../assets/img/project/gudangku.png');">
+                </div>
+                <a href="https://acep-awaludin179-project.on.drv.tw/gudangku/Index.html" target="_blank">
+                    <h3>Gudangku -2022</h3>
+                </a>
+                <p class="project-time">durasi: 3 bulan</p>
+                <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web</p>
+                <div class="project-technologies">
+                    <i class='bx bxl-html5'></i>
+                    <i class='bx bxl-css3'></i>
+                    <i class='bx bxl-javascript'></i>
+                </div>
+                <div class="project-button">
+                    <p>edit</p>
+                    <p>delete</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="project-img">
+
+                </div>
+                <a href="./">
+                    <h3>Indonesian Millennial Development -2022</h3>
+                </a>
+                <p>durasi: 3 bulan</p>
+                <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web</p>
+                <div class="project-technologies">
+                    <i></i>
+                </div>
+                <div class="project-button">
+                    <p>edit</p>
+                    <p>delete</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="project-img">
+
+                </div>
+                <a href="./">
+                    <h3>Indonesian Millennial Development -2022</h3>
+                </a>
+                <p>durasi: 3 bulan</p>
+                <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web</p>
+                <div class="project-technologies">
+                    <i></i>
+                </div>
+                <div class="project-button">
+                    <p>edit</p>
+                    <p>delete</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
