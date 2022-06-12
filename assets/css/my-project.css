@@ -117,7 +117,7 @@ form p{
     font-weight: 500;
 }
 
-form input, form textarea{
+form input, form textarea, .file-input{
     width: 100%;
     box-sizing: border-box;
     padding: 5px 10px;
@@ -141,7 +141,7 @@ form input, form textarea{
 form textarea{
     height: 5rem;
 }
-
+    /*. Checkbox Input */
 .checkbox{
     display: flex;
     flex-wrap: wrap;
@@ -152,17 +152,74 @@ form textarea{
 }
 
 .checkbox label{
+    display: flex;
+    align-items: center;
     flex: 50%;
     cursor: pointer;
 }
 
-.checkbox input{
-    width: min-content;
-    margin: 15px 10px 15px 0;
-    border-radius: 10px;
-    box-shadow: 1px 2px 5px rgba(128, 128, 128, .5);
+.checkbox label:hover{
+    color: grey;
 }
 
+.checkbox input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 15px 10px 15px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox input::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url('./../img/project/bx-check.svg');
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.checkbox input:checked::after{
+    display: block;
+}
+
+    /*. File Input */
+
+.file-input{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.file-input p{
+    margin: 0;
+    padding: 5px 10px;
+    background-color: var(--bg-1);
+    box-shadow: .5px .5px 2px grey;
+    color: grey;
+}
+
+.file-input i{
+    padding-right: 10px;
+    font-size: x-large;
+}
+
+input[type="file"]{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    transform: scale(3);
+}
+
+
+    /*. Form Button  */
 form button{
     background-color: var(--pri-color);
     padding: .3em 2em;
