@@ -111,16 +111,9 @@ const getProjectForm = () => {
     //. Image
 
     let image = document.getElementById('projectImage').files
-
-    if(image.length == 0){
-        return alert('Silakan unggah gambar projek anda!')
-    } else {
-        image = URL.createObjectURL(image[0])
-    }
-
     
     //. Form Validation
-
+    
     if(name == ''){
         return alert('Silakan isi Nama Projek!')
     } else if (startDate == ''){
@@ -131,8 +124,12 @@ const getProjectForm = () => {
         return alert('Kolom deskripsi masih kosong!')
     } else if (technologies.length == 0){
         return alert('Silakan pilih salah satu teknologi yang diterapkan!')
+    } else if(image.length == 0){
+        return alert('Silakan unggah gambar projek anda!')
+    } else {
+        image = URL.createObjectURL(image[0])
     }
-
+    
     //. Set Project Form
     let setProjectForm = {
         name,
