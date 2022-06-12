@@ -157,21 +157,25 @@ const renderProject = () => {
     `
         <h1>MY PROJECT</h1>
         <div class="project-item">
-            <div class="project-img" style="background-image: URL('./../assets/img/project/gudangku.png');">
+            <div class="item-top">
+                <div class="project-img" style="background-image: URL('./../assets/img/project/gudangku.png');">
+                </div>
+                <a href="https://acep-awaludin179-project.on.drv.tw/gudangku/Index.html" target="_blank">
+                    <h3>Gudangku -2022</h3>
+                </a>
+                <p class="project-time">durasi: 3 bulan</p>
+                <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web.</p>
             </div>
-            <a href="https://acep-awaludin179-project.on.drv.tw/gudangku/Index.html" target="_blank">
-                <h3>Gudangku -2022</h3>
-            </a>
-            <p class="project-time">durasi: 3 bulan</p>
-            <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web.</p>
-            <div class="project-technologies">
-                <i class='bx bxl-html5'></i>
-                <i class='bx bxl-css3'></i>
-                <i class='bx bxl-javascript'></i>
-            </div>
-            <div class="project-button">
-                <p>edit</p>
-                <p>delete</p>
+            <div class="item-bottom">
+                <div class="project-technologies">
+                    <i class='bx bxl-html5'></i>
+                    <i class='bx bxl-css3'></i>
+                    <i class='bx bxl-javascript'></i>
+                </div>
+                <div class="project-button">
+                    <p>edit</p>
+                    <p>delete</p>
+                </div>
             </div>
         </div>
     `
@@ -180,18 +184,22 @@ const renderProject = () => {
         document.getElementById('myProject').innerHTML +=
         `
         <div class="project-item">
-            <div class="project-img" style="background-image: URL('${projectForm[i].image}');">
+            <div class="item-top">
+                <div class="project-img" style="background-image: URL('${projectForm[i].image}');">
+                </div>
+                <a href="${projectForm[i].image}" target="_blank">
+                    <h3>${projectForm[i].name}</h3>
+                </a>
+                <p class="project-time">durasi: ${projectForm[i].showYearDuration} ${projectForm[i].showMonthDuration}</p>
+                <p>${projectForm[i].description}</p>
             </div>
-            <a href="${projectForm[i].image}" target="_blank">
-                <h3>${projectForm[i].name}</h3>
-            </a>
-            <p class="project-time">durasi: ${projectForm[i].showYearDuration} ${projectForm[i].showMonthDuration}</p>
-            <p>${projectForm[i].description}</p>
-            <div id="projectTechnologies${i}" class="project-technologies">
-            </div>
-            <div class="project-button">
-                <p>edit</p>
-                <p>delete</p>
+            <div class="item-bottom">
+                <div id="projectTechnologies${i}" class="project-technologies">
+                </div>
+                <div class="project-button">
+                    <p>edit</p>
+                    <p>delete</p>
+                </div>
             </div>
         </div>
             
