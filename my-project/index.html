@@ -119,59 +119,137 @@
         </div>
         <!--. Project Detail -->
         <div class="project-detail">
-            <h1>Gudangku</h1>
-            <div class="project-detail-img" style="background-image: url('./../assets/img/project/gudangku.png');">
-            </div>
-            <div class="project-detail-right">
-                <div class="project-detail-duration">
-                    <h3>Duration</h3>
-                    <p>
-                        <i class='bx bxs-calendar'></i>
-                        12 Jan 2021 - 11 Feb 2021
-                    </p>
-                    <p>
-                        <i class='bx bx-time-five'></i>
-                        1 month
-                    </p>
+            <div class="project-detail-container">
+                <i class='bx bx-x-circle'></i>
+                <h1>Gudangku</h1>
+                <div class="project-detail-img" style="background-image: url('./../assets/img/project/gudangku.png');">
                 </div>
-                <div class="project-detail-technologies">
-                    <h3>Technologies</h3>
+                <div class="project-detail-right">
+                    <div class="project-detail-duration">
+                        <h3>Duration</h3>
+                        <p>
+                            <i class='bx bxs-calendar'></i>
+                            12 Jan 2021 - 11 Feb 2021
+                        </p>
+                        <p>
+                            <i class='bx bx-time-five'></i>
+                            1 month
+                        </p>
+                    </div>
+                    <div class="project-detail-technologies">
+                        <h3>Technologies</h3>
+                        <p>
+                            <i class='bx bxl-html5'></i>
+                            HTML
+                        </p>
+                        <p>
+                            <i class='bx bxl-css3'></i>
+                            CSS
+                        </p>
+                        <p>
+                            <i class='bx bxl-javascript'></i>
+                            JavaScript
+                        </p>
+                    </div>
+                </div>
+                <article>
                     <p>
-                        <i class='bx bxl-html5'></i>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero minima quam, eius laudantium
+                        deserunt
+                        neque. Assumenda quidem blanditiis ipsa quia amet molestiae exercitationem ab. Repudiandae nam
+                        minima possimus dolore eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam optio
+                        provident tempore ratione quae accusantium at officia esse magni perferendis!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempora laboriosam delectus
+                        illum
+                        dolorum deleniti? Perferendis illo atque aliquid aut facere repudiandae rerum maxime modi eum
+                        nam
+                        perspiciatis maiores culpa voluptatem possimus, minus iure expedita sequi amet? Nemo pariatur
+                        illo
+                        reprehenderit molestiae officia.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, modi voluptatem debitis incidunt
+                        ex
+                        praesentium minus laborum necessitatibus molestias? Laborum dolorem consectetur aspernatur
+                        accusamus, enim alias. Reiciendis iure alias veniam, unde laborum vitae possimus inventore culpa
+                        eos
+                        sint! Maxime aperiam ipsam dolorum praesentium veritatis pariatur, eos quod. Obcaecati, iusto
+                        vero
+                        eligendi ratione tempora voluptatum voluptate ullam assumenda fuga nobis rem corrupti non
+                        deleniti
+                        cumque sint placeat totam dolor consectetur dolore.
+                    </p>
+                </article>
+            </div>
+        </div>
+        <div class="edit-project block">
+            <form>
+                <h1>EDIT THE PROJECT</h1>
+                <label for="projectName">
+                    <p>Project Name</p>
+                    <input type="text" name="projectName" id="projectName">
+                </label>
+
+                <div class="date">
+                    <label for="projectStartDate">
+                        <p>Start Date</p>
+                        <input type="date" name="projectStartDate" id="projectStartDate">
+                    </label>
+
+                    <label for="projectEndDate">
+                        <p>End Date</p>
+                        <input type="date" name="projectEndDate" id="projectEndDate">
+                    </label>
+                </div>
+
+                <label for="projectDescription">
+                    <p>Description</p>
+                    <textarea name="projectDescription" id="projectDescription"></textarea>
+                </label>
+
+                <div class="checkbox">
+                    <p>Technologies</p>
+
+                    <label for="projectHTML">
+                        <input type="checkbox" name="projectHTML" id="projectHTML" value="<i class='bx bxl-html5'></i>">
                         HTML
-                    </p>
-                    <p>
-                        <i class='bx bxl-css3'></i>
+                    </label>
+
+                    <label for="projectCSS">
+                        <input type="checkbox" name="projectCSS" id="projectCSS" value="<i class='bx bxl-css3'></i>">
                         CSS
-                    </p>
-                    <p>
-                        <i class='bx bxl-javascript'></i>
+                    </label>
+
+                    <label for="projectJS">
+                        <input type="checkbox" name="projectJS" id="projectJS"
+                            value="<i class='bx bxl-javascript'></i>">
                         JavaScript
-                    </p>
+                    </label>
+
+                    <label for="projectTailwind">
+                        <input type="checkbox" name="projectTailwind" id="projectTailwind"
+                            value="<i class='bx bxl-tailwind-css'></i>">
+                        TailwindCSS
+                    </label>
+
+                    <label for="projectSASS">
+                        <input type="checkbox" name="projectSASS" id="projectSASS" value="<i class='bx bxl-sass' ></i>">
+                        SASS
+                    </label>
                 </div>
-            </div>
-            <article>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero minima quam, eius laudantium deserunt
-                    neque. Assumenda quidem blanditiis ipsa quia amet molestiae exercitationem ab. Repudiandae nam
-                    minima possimus dolore eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam optio
-                    provident tempore ratione quae accusantium at officia esse magni perferendis!
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempora laboriosam delectus illum
-                    dolorum deleniti? Perferendis illo atque aliquid aut facere repudiandae rerum maxime modi eum nam
-                    perspiciatis maiores culpa voluptatem possimus, minus iure expedita sequi amet? Nemo pariatur illo
-                    reprehenderit molestiae officia.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, modi voluptatem debitis incidunt ex
-                    praesentium minus laborum necessitatibus molestias? Laborum dolorem consectetur aspernatur
-                    accusamus, enim alias. Reiciendis iure alias veniam, unde laborum vitae possimus inventore culpa eos
-                    sint! Maxime aperiam ipsam dolorum praesentium veritatis pariatur, eos quod. Obcaecati, iusto vero
-                    eligendi ratione tempora voluptatum voluptate ullam assumenda fuga nobis rem corrupti non deleniti
-                    cumque sint placeat totam dolor consectetur dolore.
-                </p>
-            </article>
+
+                <div>
+                    <p>Upload Image</p>
+                    <label for="projectImage" class="file-input">
+                        <p>choose</p>
+                        <i class='bx bx-paperclip'></i>
+                        <input id="projectImage" type="file" accept="image/*">
+                    </label>
+                </div>
+                <button type="button" onclick="getProjectForm()">Submit</button>
+            </form>
         </div>
     </main>
     <script src=" ./../assets/js/main.js"> </script>

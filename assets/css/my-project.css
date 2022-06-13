@@ -322,16 +322,28 @@ form button:hover{
 /*. Project Detail */
 
 .project-detail{
-    width: 60%;
-    background-color: var(--bg-1);
-    margin: auto;
-    margin-bottom: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000ab;
+    padding: 50px;
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    overflow: scroll;
+}
+
+.project-detail-container{
+    width: 70%;
+    background-color: var(--bg-2);
+    margin: auto;
+    margin-bottom: 80px;
+    padding: 0 5% 5% 5%;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .project-detail h1{
@@ -355,13 +367,13 @@ form button:hover{
     margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
 }
 
 .project-detail-duration h3, .project-detail-technologies h3{
     margin: 0;
     flex-basis: 100%;
     font-weight: 500;
+    line-height: normal;
 }
 
 div.project-detail-duration p, div.project-detail-technologies p{
@@ -371,6 +383,7 @@ div.project-detail-duration p, div.project-detail-technologies p{
     font-size: medium;
     display: flex;
     align-items: center;
+    line-height: normal;
 }
 
 .project-detail-duration i, .project-detail-technologies i{
@@ -386,4 +399,46 @@ div.project-detail-technologies p{
 .project-detail p{
     text-align: justify;
     font-size: small;
+}
+
+/*. Edit Project */
+
+.edit-project{
+    height: 100vh;
+    background-color: #e3e7ebab;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: scroll;
+}
+
+.edit-project form{
+    width: 440px;
+    padding: 20px;
+    height: 700px;
+    background-color: var(--bg-2);
+    border-radius: 15px;
+}
+
+.edit-project form button{
+    bottom: 30px;
+    right: 20px;
+}
+
+.block{
+    display: block;
+}
+
+.bx-x-circle{
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    font-size: x-large;
+}
+
+.bx-x-circle:hover{
+    color: grey;
+    cursor: pointer;
 }
