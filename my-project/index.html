@@ -98,9 +98,7 @@
                 <div class="item-top">
                     <div class="project-img" style="background-image: URL('./../assets/img/project/gudangku.png');">
                     </div>
-                    <a href="https://acep-awaludin179-project.on.drv.tw/gudangku/Index.html" target="_blank">
-                        <h3>Gudangku -2022</h3>
-                    </a>
+                    <h3 onclick="detailToggle('projectDetailContainer','projectDetail')">Gudangku -2022</h3>
                     <p class="project-time">durasi: 3 bulan</p>
                     <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web.</p>
                 </div>
@@ -111,16 +109,16 @@
                         <i class='bx bxl-javascript'></i>
                     </div>
                     <div class="project-button">
-                        <p>edit</p>
+                        <p onclick="editToggle('editForm','formEdit')">edit</p>
                         <p>delete</p>
                     </div>
                 </div>
             </div>
         </div>
         <!--. Project Detail -->
-        <div class="project-detail">
-            <div class="project-detail-container">
-                <i class='bx bx-x-circle'></i>
+        <div id="projectDetailContainer" class="project-detail-container">
+            <div id="projectDetail" class="project-detail">
+                <i class='bx bx-x-circle' onclick="detailToggle('projectDetailContainer','projectDetail')"></i>
                 <h1>Gudangku</h1>
                 <div class="project-detail-img" style="background-image: url('./../assets/img/project/gudangku.png');">
                 </div>
@@ -184,8 +182,10 @@
                 </article>
             </div>
         </div>
-        <div class="edit-project block">
-            <form>
+        <!--. Edit Form -->
+        <div id="editForm" class="edit-project">
+            <form id="formEdit" class="edit-project-form">
+                <i class='bx bx-x-circle' onclick="editToggle('editForm','formEdit')"></i>
                 <h1>EDIT THE PROJECT</h1>
                 <label for="projectName">
                     <p>Project Name</p>

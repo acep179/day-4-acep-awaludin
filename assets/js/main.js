@@ -114,18 +114,17 @@ const getProjectForm = () => {
     
     //. Form Validation
     
-    // if(name == ''){
-    //     return alert('Silakan isi Nama Projek!')
-    // } else if (startDate == ''){
-    //     return alert('Silakan tentukan tanggal memulai project!')
-    // } else if (endDate == ''){
-    //     return alert('Silakan tentukan tanggal berakhirnya projek')
-    // } else if (description == ''){
-    //     return alert('Kolom deskripsi masih kosong!')
-    // } else if (technologies.length == 0){
-    //     return alert('Silakan pilih salah satu teknologi yang diterapkan!')
-    // } else 
-    if(image.length == 0){
+    if(name == ''){
+        return alert('Silakan isi Nama Projek!')
+    } else if (startDate == ''){
+        return alert('Silakan tentukan tanggal memulai project!')
+    } else if (endDate == ''){
+        return alert('Silakan tentukan tanggal berakhirnya projek')
+    } else if (description == ''){
+        return alert('Kolom deskripsi masih kosong!')
+    } else if (technologies.length == 0){
+        return alert('Silakan pilih salah satu teknologi yang diterapkan!')
+    } else if(image.length == 0){
         return alert('Silakan unggah gambar projek anda!')
     } else {
         image = URL.createObjectURL(image[0])
@@ -220,4 +219,20 @@ const deleteProject = (i) => {
 
 const editProject = (i) => {
 
+}
+
+function detailToggle(idParent,idChild) {
+    idPrnt = document.getElementById(`${idParent}`)
+    idPrnt.classList.toggle('block')
+    
+    idChld = document.getElementById(`${idChild}`)
+    idChld.classList.toggle('flex')
+}
+
+function editToggle(idParent,idChild) {
+    idPrnt = document.getElementById(`${idParent}`)
+    idPrnt.classList.toggle('block')
+    
+    idChld = document.getElementById(`${idChild}`)
+    idChld.classList.toggle('block')
 }
