@@ -318,3 +318,72 @@ form button:hover{
     background-color: var(--bg-2);
     border: 1px solid black;
 }
+
+/*. Project Detail */
+
+.project-detail{
+    width: 60%;
+    background-color: var(--bg-1);
+    margin: auto;
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.project-detail h1{
+    text-align: center;
+    flex-basis: 100%;
+}
+
+.project-detail-img{
+    flex: 55%;
+    aspect-ratio: 9/6;
+    margin-right: 5%;
+    margin-bottom: 30px;
+    background-size: cover;
+}
+
+.project-detail-right{
+    flex: 40%;
+}
+
+.project-detail-duration, .project-detail-technologies{
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.project-detail-duration h3, .project-detail-technologies h3{
+    margin: 0;
+    flex-basis: 100%;
+    font-weight: 500;
+}
+
+div.project-detail-duration p, div.project-detail-technologies p{
+    margin: 0;
+    flex-basis: 100%;
+    color: rgb(73, 73, 73);
+    font-size: medium;
+    display: flex;
+    align-items: center;
+}
+
+.project-detail-duration i, .project-detail-technologies i{
+    color: black;
+    font-size: xx-large;
+    margin-right: 10px;
+}
+
+div.project-detail-technologies p{
+    flex-basis: 50%;
+}
+
+.project-detail p{
+    text-align: justify;
+    font-size: small;
+}
