@@ -114,17 +114,18 @@ const getProjectForm = () => {
     
     //. Form Validation
     
-    if(name == ''){
-        return alert('Silakan isi Nama Projek!')
-    } else if (startDate == ''){
-        return alert('Silakan tentukan tanggal memulai project!')
-    } else if (endDate == ''){
-        return alert('Silakan tentukan tanggal berakhirnya projek')
-    } else if (description == ''){
-        return alert('Kolom deskripsi masih kosong!')
-    } else if (technologies.length == 0){
-        return alert('Silakan pilih salah satu teknologi yang diterapkan!')
-    } else if(image.length == 0){
+    // if(name == ''){
+    //     return alert('Silakan isi Nama Projek!')
+    // } else if (startDate == ''){
+    //     return alert('Silakan tentukan tanggal memulai project!')
+    // } else if (endDate == ''){
+    //     return alert('Silakan tentukan tanggal berakhirnya projek')
+    // } else if (description == ''){
+    //     return alert('Kolom deskripsi masih kosong!')
+    // } else if (technologies.length == 0){
+    //     return alert('Silakan pilih salah satu teknologi yang diterapkan!')
+    // } else 
+    if(image.length == 0){
         return alert('Silakan unggah gambar projek anda!')
     } else {
         image = URL.createObjectURL(image[0])
@@ -178,9 +179,13 @@ const renderProject = () => {
     `
 
     for(let i = 0; i < projectForm.length; i++){
+
+        if (projectForm[i] == ""){
+            ""
+        } else {
         document.getElementById('myProject').innerHTML +=
         `
-        <div class="project-item">
+        <div id=projectItem${i} class="project-item">
             <div class="item-top">
                 <div class="project-img" style="background-image: URL('${projectForm[i].image}');">
                 </div>
@@ -195,7 +200,7 @@ const renderProject = () => {
                 </div>
                 <div class="project-button">
                     <p>edit</p>
-                    <p>delete</p>
+                    <p onclick = "deleteProject(${i})">delete</p>
                 </div>
             </div>
         </div>
@@ -204,5 +209,15 @@ const renderProject = () => {
             for(const a of projectForm[i].technologies){
                 document.getElementById(`projectTechnologies${i}`).innerHTML += a
             }
+        }
     }
+}
+
+const deleteProject = (i) => {
+    projectForm[i] = "";
+    renderProject();
+}
+
+const editProject = (i) => {
+
 }
