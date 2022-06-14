@@ -441,6 +441,10 @@ div.project-detail-technologies p{
     display: flex;
 }
 
+.d-none{
+    display: none;
+}
+
 .bx-x-circle{
     position: absolute;
     top: 9px;

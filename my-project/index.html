@@ -98,7 +98,7 @@
                 <div class="item-top">
                     <div class="project-img" style="background-image: URL('./../assets/img/project/gudangku.png');">
                     </div>
-                    <h3 onclick="detailToggle('projectDetailContainer','projectDetail')">Gudangku -2022</h3>
+                    <h3 onclick="exit('projectDetailContainer','block','projectDetail','flex')">Gudangku -2022</h3>
                     <p class="project-time">durasi: 3 bulan</p>
                     <p>Gudangku adalah sebuah aplikasi manajemen gudang berbasis web.</p>
                 </div>
@@ -109,7 +109,7 @@
                         <i class='bx bxl-javascript'></i>
                     </div>
                     <div class="project-button">
-                        <p onclick="editToggle('editForm','formEdit')">edit</p>
+                        <p onclick="exit('editForm','block','formEdit','block')">edit</p>
                         <p>delete</p>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
         <!--. Project Detail -->
         <div id="projectDetailContainer" class="project-detail-container">
             <div id="projectDetail" class="project-detail">
-                <i class='bx bx-x-circle' onclick="detailToggle('projectDetailContainer','projectDetail')"></i>
+                <i class='bx bx-x-circle' onclick="exit('projectDetailContainer','block','projectDetail','flex')"></i>
                 <h1>Gudangku</h1>
                 <div class="project-detail-img" style="background-image: url('./../assets/img/project/gudangku.png');">
                 </div>
@@ -185,70 +185,73 @@
         <!--. Edit Form -->
         <div id="editForm" class="edit-project">
             <form id="formEdit" class="edit-project-form">
-                <i class='bx bx-x-circle' onclick="editToggle('editForm','formEdit')"></i>
+                <i class='bx bx-x-circle' onclick="exit('editForm','block','formEdit','block')"></i>
                 <h1>EDIT THE PROJECT</h1>
-                <label for="projectName">
+                <label for="editProjectName">
                     <p>Project Name</p>
-                    <input type="text" name="projectName" id="projectName">
+                    <input type="text" name="editProjectName" id="editProjectName">
                 </label>
 
                 <div class="date">
-                    <label for="projectStartDate">
+                    <label for="editProjectStartDate">
                         <p>Start Date</p>
-                        <input type="date" name="projectStartDate" id="projectStartDate">
+                        <input type="date" name="editProjectStartDate" id="editProjectStartDate">
                     </label>
 
-                    <label for="projectEndDate">
+                    <label for="editProjectEndDate">
                         <p>End Date</p>
-                        <input type="date" name="projectEndDate" id="projectEndDate">
+                        <input type="date" name="editProjectEndDate" id="editProjectEndDate">
                     </label>
                 </div>
 
-                <label for="projectDescription">
+                <label for="editProjectDescription">
                     <p>Description</p>
-                    <textarea name="projectDescription" id="projectDescription"></textarea>
+                    <textarea name="editProjectDescription" id="editProjectDescription"></textarea>
                 </label>
 
                 <div class="checkbox">
                     <p>Technologies</p>
 
-                    <label for="projectHTML">
-                        <input type="checkbox" name="projectHTML" id="projectHTML" value="<i class='bx bxl-html5'></i>">
+                    <label for="editProjectHTML">
+                        <input type="checkbox" name="editProjectHTML" id="editProjectHTML"
+                            value="<i class='bx bxl-html5'></i>">
                         HTML
                     </label>
 
-                    <label for="projectCSS">
-                        <input type="checkbox" name="projectCSS" id="projectCSS" value="<i class='bx bxl-css3'></i>">
+                    <label for="editProjectCSS">
+                        <input type="checkbox" name="editProjectCSS" id="editProjectCSS"
+                            value="<i class='bx bxl-css3'></i>">
                         CSS
                     </label>
 
-                    <label for="projectJS">
-                        <input type="checkbox" name="projectJS" id="projectJS"
+                    <label for="editProjectJS">
+                        <input type="checkbox" name="editProjectJS" id="editProjectJS"
                             value="<i class='bx bxl-javascript'></i>">
                         JavaScript
                     </label>
 
-                    <label for="projectTailwind">
-                        <input type="checkbox" name="projectTailwind" id="projectTailwind"
+                    <label for="editProjectTailwind">
+                        <input type="checkbox" name="editProjectTailwind" id="editProjectTailwind"
                             value="<i class='bx bxl-tailwind-css'></i>">
                         TailwindCSS
                     </label>
 
-                    <label for="projectSASS">
-                        <input type="checkbox" name="projectSASS" id="projectSASS" value="<i class='bx bxl-sass' ></i>">
+                    <label for="editProjectSASS">
+                        <input type="checkbox" name="editProjectSASS" id="editProjectSASS"
+                            value="<i class='bx bxl-sass' ></i>">
                         SASS
                     </label>
                 </div>
 
                 <div>
                     <p>Upload Image</p>
-                    <label for="projectImage" class="file-input">
+                    <label for="editProjectImage" class="file-input">
                         <p>choose</p>
                         <i class='bx bx-paperclip'></i>
-                        <input id="projectImage" type="file" accept="image/*">
+                        <input id="editProjectImage" type="file" accept="image/*">
                     </label>
                 </div>
-                <button type="button" onclick="getProjectForm()">Submit</button>
+                <button type="button" onclick="updateProjectForm()">Update</button>
             </form>
         </div>
     </main>
