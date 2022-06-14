@@ -107,35 +107,41 @@ const getProjectForm = () => {
     
     // . Techologies
     let technologies = []
+    let technologiesName = []
     
     let html = document.getElementById('projectHTML').checked
     if (html){
         html = document.getElementById('projectHTML').value
         technologies.push(html)
+        technologiesName.push('HTML')
     }
     
     let css = document.getElementById('projectCSS').checked
     if (css){
         css = document.getElementById('projectCSS').value
         technologies.push(css)
+        technologiesName.push('CSS')
     }
-
+    
     let js = document.getElementById('projectJS').checked
     if (js){
         js = document.getElementById('projectJS').value
         technologies.push(js)
+        technologiesName.push('JavaScript')
     }
     
     let tailwind = document.getElementById('projectTailwind').checked
     if (tailwind){
         tailwind = document.getElementById('projectTailwind').value
         technologies.push(tailwind)
+        technologiesName.push('TailwindCSS')
     }
-
+    
     let sass = document.getElementById('projectSASS').checked
     if (sass){
         sass = document.getElementById('projectSASS').value
         technologies.push(sass)
+        technologiesName.push('SASS')
     }
     
     //. Image
@@ -176,6 +182,7 @@ const getProjectForm = () => {
         showYearDuration,
         description,
         technologies,
+        technologiesName,
         image
     }
 
@@ -186,9 +193,10 @@ const getProjectForm = () => {
     renderProject()
 }
 
+//. Render Project Card
+
 const renderProject = () => {
 
-    //. Render Project Card
 
     document.getElementById('myProject').innerHTML = 
     `
@@ -250,8 +258,9 @@ const renderProject = () => {
     renderDetailProject()
 }
 
+//. Render Project Detail
+
 const renderDetailProject = () => {
-    //. Render Project Detail
     document.getElementById('projectDetailContainer').innerHTML = 
     `
     <div id="projectDetail" class="project-detail">
@@ -326,50 +335,51 @@ const renderDetailProject = () => {
             ""
         } else {
         document.getElementById('projectDetailContainer').innerHTML +=
-        `
-        <div id="projectDetail${i}" class="project-detail">
-                <i class='bx bx-x-circle' onclick="exit('projectDetailContainer','block','projectDetail${i}','flex')"></i>
-                <h1>${projectForm[i].name}</h1>
-                <div class="project-detail-img" style="background-image: url('${projectForm[i].image}');">
-                </div>
-                <div class="project-detail-right">
-                    <div class="project-detail-duration">
-                        <h3>Duration</h3>
-                        <p>
-                            <i class='bx bxs-calendar'></i>
-                            ${projectForm[i].startDateNumber} ${projectForm[i].startMonthName} ${projectForm[i].startYearNumber} - ${projectForm[i].endDateNumber} ${projectForm[i].endMonthName} ${projectForm[i].endYearNumber}
-                        </p>
-                        <p>
-                            <i class='bx bx-time-five'></i>
-                            ${projectForm[i].showYearDuration}
-                            ${projectForm[i].showMonthDuration}
+            `
+            <div id="projectDetail${i}" class="project-detail">
+                    <i class='bx bx-x-circle' onclick="exit('projectDetailContainer','block','projectDetail${i}','flex')"></i>
+                    <h1>${projectForm[i].name}</h1>
+                    <div class="project-detail-img" style="background-image: url('${projectForm[i].image}');">
+                    </div>
+                    <div class="project-detail-right">
+                        <div class="project-detail-duration">
+                            <h3>Duration</h3>
+                            <p>
+                                <i class='bx bxs-calendar'></i>
+                                ${projectForm[i].startDateNumber} ${projectForm[i].startMonthName} ${projectForm[i].startYearNumber} - ${projectForm[i].endDateNumber} ${projectForm[i].endMonthName} ${projectForm[i].endYearNumber}
                             </p>
+                            <p>
+                                <i class='bx bx-time-five'></i>
+                                ${projectForm[i].showYearDuration}
+                                ${projectForm[i].showMonthDuration}
+                                </p>
+                        </div>
+                        <div id="projectDetailTechnologies${i}" class="project-detail-technologies">
+                        </div>
                     </div>
-                    <div class="project-detail-technologies">
-                        <h3>Technologies</h3>
+                    <article>
                         <p>
-                            <i class='bx bxl-html5'></i>
-                            HTML
+                        ${projectForm[i].description}
                         </p>
-                        <p>
-                            <i class='bx bxl-css3'></i>
-                            CSS
-                        </p>
-                        <p>
-                            <i class='bx bxl-javascript'></i>
-                            JavaScript
-                        </p>
-                    </div>
+                    </article>
                 </div>
-                <article>
-                    <p>
-                    ${projectForm[i].description}
-                    </p>
-                </article>
-            </div>
-        `
+            `
+
+            document.getElementById(`projectDetailTechnologies${i}`).innerHTML = '<h3>Technologies</h3>'
+
+            for(let n = 0; n < projectForm[i].technologies.length; n++){
+                document.getElementById(`projectDetailTechnologies${i}`).innerHTML += 
+                `
+                <p>
+                    ${projectForm[i].technologies[n]}
+                    ${projectForm[i].technologiesName[n]}
+                </p>
+                `
+            }
+            
         }
     }
+
 }
 
 const deleteProject = (i) => {
