@@ -187,6 +187,9 @@ const getProjectForm = () => {
 }
 
 const renderProject = () => {
+
+    //. Render Project Card
+
     document.getElementById('myProject').innerHTML = 
     `
         <h1>MY PROJECT</h1>
@@ -244,7 +247,11 @@ const renderProject = () => {
         }
     }
 
+    renderDetailProject()
+}
 
+const renderDetailProject = () => {
+    //. Render Project Detail
     document.getElementById('projectDetailContainer').innerHTML = 
     `
     <div id="projectDetail" class="project-detail">
@@ -490,11 +497,3 @@ const exit = (idParent,display1,idChild,display2) => {
     idChld = document.getElementById(`${idChild}`)
     idChld.classList.toggle(display2)
 }
-
-// function editToggle(idParent,idChild) {
-//     idPrnt = document.getElementById(`${idParent}`)
-//     idPrnt.classList.toggle('block')
-    
-//     idChld = document.getElementById(`${idChild}`)
-//     idChld.classList.toggle('block')
-// }
