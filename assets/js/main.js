@@ -535,18 +535,23 @@ const updateProjectForm = (i) => {
         image
     }
 
-    projectForm[i] = setProjectForm
+    let confirmChanges = confirm('Apakah anda yakin?')
 
-    console.log(projectForm)
+    if (confirmChanges){
+        projectForm[i] = setProjectForm
     
-    renderProject()
+        console.log(projectForm)
+        
+        renderProject()
+        exit('editForm','block','formEdit','block')
+    }
 
 }
 
 const changeId = (i) => {
     let button = document.getElementById('updateButton')
 
-    button.setAttribute("onclick",`updateProjectForm(${i}); exit('editForm','block','formEdit','block')`)
+    button.setAttribute("onclick",`updateProjectForm(${i});`)
 
 }
 
