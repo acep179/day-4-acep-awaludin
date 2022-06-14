@@ -242,7 +242,7 @@ const renderProject = () => {
                 <div id="projectTechnologies${i}" class="project-technologies">
                 </div>
                 <div class="project-button">
-                    <p onclick="exit('editForm','block','formEdit${i}','block')">edit</p>
+                    <p onclick="exit('editForm','block','formEdit','block');changeId(${i});">edit</p>
                     <p onclick="deleteProject(${i})">delete</p>
                 </div>
             </div>
@@ -394,116 +394,166 @@ const deleteProjectItem = () => {
 
 //. Update Project Form
 
-// const updateProjectForm = (i) => {
+const updateProjectForm = (i) => {
     
 
-//     //. Name & Description
-//     let name = document.getElementById('editProjectName').value
-//     let description = document.getElementById('editProjectDescription').value
+    //. Name & Description
+    let name = document.getElementById('editProjectName').value
+    let description = document.getElementById('editProjectDescription').value
     
-//     //. Duration
-//     let startDate = document.getElementById('editProjectStartDate').value
-//     let endDate = document.getElementById('editProjectEndDate').value
-
-//     startMonth = Number(new Date(startDate).getMonth())
-//     endMonth = Number(new Date(endDate).getMonth())
-//     startYear = Number(new Date(startDate).getFullYear())
-//     endYear = Number(new Date(endDate).getFullYear())
-
-//     let yearDuration = endYear - startYear
-
-//     let monthDuration = (endMonth+(12*yearDuration) - startMonth) % 12
+    //. Duration
+    let startDate = document.getElementById('editProjectStartDate').value
+    let endDate = document.getElementById('editProjectEndDate').value
     
-//     let showMonthDuration = ''
-//     let showYearDuration = ''
+    let showMonthDuration = ''
+    let showYearDuration = ''
 
-//     if(monthDuration > 0){
-//         showMonthDuration = `${monthDuration} bulan`
-//     }
+    let startDateNumber = ''
+    let endDateNumber = ''
+
+    let startMonthName = ''
+    let endMonthName = ''
+
+    let startYearNumber = ''
+    let endYearNumber = ''
+    
+    const getTime = (startDate, endDate) => {
+        startDate = new Date(startDate)
+        endDate = new Date(endDate)
         
-//     if(yearDuration > 0){
-//         showYearDuration = `${yearDuration} tahun`
-//     }
-
-//     // . Techologies
-//     let technologies = []
-
-//     let html = document.getElementById('editProjectHTML').checked
-//     if (html === true){
-//         html = document.getElementById('editProjectHTML').value
-//         technologies.push(html)
-//     }
+        let getMiliSecond = endDate - startDate
+        
+        let yearDuration = Math.floor(getMiliSecond/1000/60/60/24/365)
+        let monthDuration = Math.floor(getMiliSecond/1000/60/60/24/30)-(yearDuration*12)
+        
+        if(monthDuration > 0){
+            showMonthDuration = `${monthDuration} bulan`
+        }
+        
+        if(yearDuration > 0){
+            showYearDuration = `${yearDuration} tahun`
+        }
+    }
     
-//     let css = document.getElementById('editProjectCSS').checked
-//     if (css === true){
-//         css = document.getElementById('editProjectCSS').value
-//         technologies.push(css)
-//     }
+    const getDateName = (startDate,endDate) => {
+        startDate = new Date(startDate)
+        endDate = new Date(endDate)
+        
+        let monthArr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Agt','Sep','Okt','Nov','Dec']
+        
+        let getStartMonth = startDate.getMonth()
+        startMonthName = monthArr[getStartMonth]
 
-//     let js = document.getElementById('editProjectJS').checked
-//     if (js === true){
-//         js = document.getElementById('editProjectJS').value
-//         technologies.push(js)
-//     }
+        let getEndMonth = endDate.getMonth()
+        endMonthName = monthArr[getEndMonth]
+
+        startYearNumber = startDate.getFullYear()
+        endYearNumber = endDate.getFullYear()
+
+        startDateNumber = startDate.getDate()
+        endDateNumber = endDate.getDate()
+    }
     
-//     let tailwind = document.getElementById('editProjectTailwind').checked
-//     if (tailwind === true){
-//         tailwind = document.getElementById('editProjectTailwind').value
-//         technologies.push(tailwind)
-//     }
-
-//     let sass = document.getElementById('editProjectSASS').checked
-//     if (sass === true){
-//         sass = document.getElementById('editProjectSASS').value
-//         technologies.push(sass)
-//     }
+    // . Techologies
+    let technologies = []
+    let technologiesName = []
     
-//     //. Image
-
-//     let image = document.getElementById('editProjectImage').files
+    let html = document.getElementById('editProjectHTML').checked
+    if (html){
+        html = document.getElementById('editProjectHTML').value
+        technologies.push(html)
+        technologiesName.push('HTML')
+    }
     
-//     //. Form Validation
+    let css = document.getElementById('editProjectCSS').checked
+    if (css){
+        css = document.getElementById('editProjectCSS').value
+        technologies.push(css)
+        technologiesName.push('CSS')
+    }
     
-//     if(name == ''){
-//         return alert('Silakan isi Nama Projek!')
-//     } else if (startDate == ''){
-//         return alert('Silakan tentukan tanggal memulai project!')
-//     } else if (endDate == ''){
-//         return alert('Silakan tentukan tanggal berakhirnya projek')
-//     } else if (description == ''){
-//         return alert('Kolom deskripsi masih kosong!')
-//     } else if (technologies.length == 0){
-//         return alert('Silakan pilih salah satu teknologi yang diterapkan!')
-//     } else if(image.length == 0){
-//         return alert('Silakan unggah gambar projek anda!')
-//     } else {
-//         image = URL.createObjectURL(image[0])
-//     }
+    let js = document.getElementById('editProjectJS').checked
+    if (js){
+        js = document.getElementById('editProjectJS').value
+        technologies.push(js)
+        technologiesName.push('JavaScript')
+    }
     
-//     //. Set Project Form
-//     let setProjectForm = {
-//         name,
-//         startDate,
-//         endDate,
-//         showMonthDuration,
-//         showYearDuration,
-//         description,
-//         technologies,
-//         image
-//     }
-
-//     projectForm.push(setProjectForm)
-
-//     console.log(projectForm)
+    let tailwind = document.getElementById('editProjectTailwind').checked
+    if (tailwind){
+        tailwind = document.getElementById('editProjectTailwind').value
+        technologies.push(tailwind)
+        technologiesName.push('TailwindCSS')
+    }
     
-    // renderProject()
+    let sass = document.getElementById('editProjectSASS').checked
+    if (sass){
+        sass = document.getElementById('editProjectSASS').value
+        technologies.push(sass)
+        technologiesName.push('SASS')
+    }
+    
+    //. Image
 
-// }
+    let image = document.getElementById('editProjectImage').files
+    
+    //. Form Validation
+    
+    if(name == ''){
+        return alert('Silakan isi Nama Projek!')
+    } else if (startDate == ''){
+        return alert('Silakan tentukan tanggal memulai project!')
+    } else if (endDate == ''){
+        return alert('Silakan tentukan tanggal berakhirnya projek')
+    } else if (description == ''){
+        return alert('Kolom deskripsi masih kosong!')
+    } else if (technologies.length == 0){
+        return alert('Silakan pilih salah satu teknologi yang diterapkan!')
+    } else if(image.length == 0){
+        return alert('Silakan unggah gambar projek anda!')
+    } else {
+        image = URL.createObjectURL(image[0])
+    }
 
-const exit = (idParent,display1,idChild,display2) => {
+    getTime(startDate,endDate)
+    getDateName(startDate,endDate)
+    
+    //. Set Project Form
+    let setProjectForm = {
+        name,
+        startDateNumber,
+        endDateNumber,
+        startMonthName,
+        endMonthName,
+        startYearNumber,
+        endYearNumber,
+        showMonthDuration,
+        showYearDuration,
+        description,
+        technologies,
+        technologiesName,
+        image
+    }
+
+    projectForm[i] = setProjectForm
+
+    console.log(projectForm)
+    
+    renderProject()
+
+}
+
+const changeId = (i) => {
+    let button = document.getElementById('updateButton')
+
+    button.setAttribute("onclick",`updateProjectForm(${i}); exit('editForm','block','formEdit','block')`)
+
+}
+
+const exit = (idParent,displayParent,idChild,displayChild) => {
     idPrnt = document.getElementById(`${idParent}`)
-    idPrnt.classList.toggle(display1)
+    idPrnt.classList.toggle(displayParent)
     
     idChld = document.getElementById(`${idChild}`)
-    idChld.classList.toggle(display2)
+    idChld.classList.toggle(displayChild)
 }

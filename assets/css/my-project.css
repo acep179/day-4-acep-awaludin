@@ -410,7 +410,8 @@ div.project-detail-technologies p{
 
 .edit-project{
     height: 100vh;
-    background-color: #e3e7ebab;
+    background-color: #000000ab;
+    padding: 50px;
     display: none;
     position: fixed;
     top: 0;
